@@ -15,7 +15,17 @@ void main() {
           CircleAvatar(
             radius: 50.0,
             backgroundImage: AssetImage("images2/ag.jpg"),
+          ),
+          Text("Sadra Alizadeh",
+
+            style: TextStyle(
+              fontFamily: "DancingScript",
+              fontSize: 30.0,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
           )
+
         ],
       ),
     ),
