@@ -12,9 +12,10 @@ void main() {
     backgroundColor: Colors.teal,
     body: SafeArea(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const CircleAvatar(
-            radius: 50.0,
+            radius: 60.0,
             backgroundImage: AssetImage("images2/ag.jpg"),
           ),
           const Text(
@@ -55,7 +56,6 @@ void main() {
             ),
           ),
           Card(
-            color: Colors.white,
             margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
             child: Padding(
               padding: EdgeInsets.all(10.0),
