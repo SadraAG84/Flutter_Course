@@ -63,6 +63,30 @@ void main() {
               ),
             ),
           ),
+          Card(
+            color: Colors.white,
+            margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Row(
+                children: <Widget>[
+                  const Icon(
+                    Icons.email,
+              
+                  ),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  Text(
+                    "email@gmail.com",
+                    style: TextStyle(
+                      fontFamily: "Wittgenstein",
+                      fontSize: 20.0,
+                      color: Colors.teal.shade900
+                    ),
+                  )
+                ],
+              ),
             ),
           )
         ],
