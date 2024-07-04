@@ -37,6 +37,13 @@ void main() {
               fontWeight: FontWeight.bold,
             ),
           ),
+          SizedBox(
+            height: 25.0,
+            width: 150.0,
+            child: Divider(
+              color: Colors.teal[200],
+            ),
+          ),
           Card(
             margin: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
             child: Padding(
