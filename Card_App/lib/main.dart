@@ -37,30 +37,21 @@ void main() {
             ),
           ),
           Card(
-            color: Colors.white,
             margin: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: <Widget>[
-                  const Icon(
-                    Icons.phone,
-                    // size: 30.0,
+              child: ListTile(
+                leading: const Icon(
+                  Icons.phone,
+                ),
+                title: Text(
+                  "+90 123 456 7890",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.teal.shade900,
                   ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    "+90 123 456 7890",
-                    style: TextStyle(
-                      // fontFamily: "Wittgenstein",
-                      fontSize: 20.0,
-                      color: Colors.teal.shade900,
-              
-                    ),
-                  )
-                ],
-              ),
+                ),
+              )
             ),
           ),
           Card(
@@ -83,10 +74,9 @@ void main() {
                       fontFamily: "Wittgenstein",
                       fontSize: 20.0,
                       color: Colors.teal.shade900
-                    ),
-                  )
-                ],
-              ),
+                  ),
+                ),
+              )
             ),
           )
         ],
@@ -94,3 +84,26 @@ void main() {
     ),
   )));
 }
+
+
+
+// Row(
+// children: <Widget>[
+// const Icon(
+// Icons.phone,
+// // size: 30.0,
+// ),
+// const SizedBox(
+// width: 10.0,
+// ),
+// Text(
+// "+90 123 456 7890",
+// style: TextStyle(
+// // fontFamily: "Wittgenstein",
+// fontSize: 20.0,
+// color: Colors.teal.shade900,
+//
+// ),
+// )
+// ],
+// ),
