@@ -2,29 +2,33 @@ import 'package:flutter/material.dart';
 
 void main() {
   return runApp(MaterialApp(
-
     home: Scaffold(
       backgroundColor: Colors.red,
       appBar: AppBar(
         title: Text("Dicee"),
-        backgroundColor: Colors.red,
-
+        backgroundColor: Colors.red[700],
       ),
       body: DicePage(),
     ),
-
   ));
 }
 
-class DicePage extends StatelessWidget{
+class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(child: Image.asset("images/dice1.png")),
-        Expanded(child: Image.asset("images/dice2.png"))
-        
-      ],
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(child: TextButton(onPressed: () {
+            print("Left Button got pressed");
+          },
+          child: Image.asset("images/dice1.png"))),
+          Expanded(child: TextButton(onPressed: () {
+            print("Right Button got presses");
+          },
+          child: Image.asset("images/dice2.png")))
+        ],
+      ),
     );
   }
 }
