@@ -2,15 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
+# Dicee 🎲
 
-This project is a starting point for a Flutter application.
+## The app
 
-A few resources to get you started if this is your first Flutter project:
+This is a simple dice app that when you tap on any of the dice, the dice will roll and the new dice number will appear.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Finished App with changes](https://github.com/SadraAG84/Flutter_Course/blob/main/Dicee/_A%20Final%20View_/dicee-demo.gif)
