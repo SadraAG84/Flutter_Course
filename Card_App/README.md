@@ -2,15 +2,10 @@
 
 A new Flutter project.
 
-## Getting Started
+## The app
 
-This project is a starting point for a Flutter application.
+This app shows your contact information and email along with your photo and work position like your business card.
 
-A few resources to get you started if this is your first Flutter project:
+![Finished App](https://github.com/SadraAG84/Flutter_Course/blob/main/Card_App/_A%20Final%20View_/Final_View.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
