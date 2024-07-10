@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 // import 'package:audioplayers/src/audio_cache.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 
-void main() => runApp(Xylophone());
+void main() => runApp(const Xylophone());
 
 class Xylophone extends StatelessWidget {
+  const Xylophone({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +18,7 @@ class Xylophone extends StatelessWidget {
             children: <Widget>[
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.red),
                       ),
                       onPressed: () {
@@ -26,10 +28,10 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.orange),
                       ),
                       onPressed: () {
@@ -39,10 +41,10 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.yellow),
                       ),
                       onPressed: () {
@@ -52,10 +54,10 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.green),
                       ),
                       onPressed: () {
@@ -65,10 +67,10 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.teal),
                       ),
                       onPressed: () {
@@ -78,11 +80,11 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
 
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.blue),
                       ),
                       onPressed: () {
@@ -92,12 +94,12 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
 
 
               Expanded(
                   child: TextButton(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                         backgroundColor: WidgetStatePropertyAll(Colors.purple),
                       ),
                       onPressed: () {
@@ -107,7 +109,7 @@ class Xylophone extends StatelessWidget {
                           showNotification: true,
                         );
                       },
-                      child: Text(""))),
+                      child: const Text(""))),
 
             ],
           ),
