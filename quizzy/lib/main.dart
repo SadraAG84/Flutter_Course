@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'questions.dart';
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -25,16 +25,17 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-  List<Icon> scorekeeper = [
-    Icon(
-      Icons.check,
-      color: Colors.green,
-    ),
-    Icon(
-      Icons.close,
-      color: Colors.red,
-    )
+  List<Icon> scorekeeper = [];
+  // List<String> questions = ["is 2 + 1 = 3?", "is human blood green?", "do we have a human with 6 hand?" ];
+  // List<bool> correct_answer = [true, false, false];
+
+  List<Questions> question_bank = [
+    Questions(q : "is 2 + 1 = 3?", a: true),
+    Questions(q : "is human blood green?", a: false),
+    Questions(q : "do we have a human with 6 hand?", a: false)
   ];
+
+  int question_number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  'This is where the question text will go.',
+                  question_bank[question_number].question_text,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -65,12 +66,16 @@ class _QuizPageState extends State<QuizPage> {
                 style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
+
+                  bool user_answer = question_bank[question_number].qestion_answer;
+                  if(user_answer == true){
+                    print("user got right");
+                  }else{
+                    print("user got it wrong");
+                  }
+
                   setState(() {
-                    print("True button pressed");
-                    scorekeeper.add(Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ));
+                    question_number++;
                   });
                 },
                 child: Text(
@@ -88,12 +93,17 @@ class _QuizPageState extends State<QuizPage> {
                 style: ButtonStyle(
                     backgroundColor: WidgetStatePropertyAll(Colors.red)),
                 onPressed: () {
+
+                  bool user_answer = question_bank[question_number].qestion_answer;
+                  if(user_answer == false){
+                    print("user got right");
+                  }else{
+                    print("user got it wrong");
+                  }
+
                   setState(() {
-                    print("False button pressed");
-                    scorekeeper.add(Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    ));
+                    question_number++;
+
                   });
                 },
                 child: Text(
