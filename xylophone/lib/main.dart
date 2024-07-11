@@ -9,12 +9,21 @@ void main() => runApp(const Xylophone());
 class Xylophone extends StatelessWidget {
   const Xylophone({super.key});
 
+  void playSound(int soundnumber){
+    AssetsAudioPlayer.newPlayer().open(
+        Audio("assets/note$soundnumber.wav"),
+        autoStart: true,
+        showNotification: true);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
                   child: TextButton(
@@ -22,11 +31,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.red),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note1.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(1);
                       },
                       child: const Text(""))),
               Expanded(
@@ -35,11 +40,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.orange),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note2.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(2);
                       },
                       child: const Text(""))),
               Expanded(
@@ -48,11 +49,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.yellow),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note3.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(3);
                       },
                       child: const Text(""))),
               Expanded(
@@ -61,11 +58,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.green),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note4.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(4);
                       },
                       child: const Text(""))),
               Expanded(
@@ -74,11 +67,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.teal),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note5.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(5);
                       },
                       child: const Text(""))),
 
@@ -88,11 +77,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.blue),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note6.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(6);
                       },
                       child: const Text(""))),
 
@@ -103,11 +88,7 @@ class Xylophone extends StatelessWidget {
                         backgroundColor: WidgetStatePropertyAll(Colors.purple),
                       ),
                       onPressed: () {
-                        AssetsAudioPlayer.newPlayer().open(
-                          Audio("assets/note7.wav"),
-                          autoStart: true,
-                          showNotification: true,
-                        );
+                        playSound(7);
                       },
                       child: const Text(""))),
 
