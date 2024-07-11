@@ -25,6 +25,17 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<Icon> scorekeeper = [
+    Icon(
+      Icons.check,
+      color: Colors.green,
+    ),
+    Icon(
+      Icons.close,
+      color: Colors.red,
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,10 +63,15 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(15.0),
             child: TextButton(
                 style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.green)
-                ),
+                    backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
-                  print("True button pressed");
+                  setState(() {
+                    print("True button pressed");
+                    scorekeeper.add(Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ));
+                  });
                 },
                 child: Text(
                   "True",
@@ -63,32 +79,32 @@ class _QuizPageState extends State<QuizPage> {
                     color: Colors.white,
                     fontSize: 20.0,
                   ),
-                )
-            ),
-          )
-          ),
+                )),
+          )),
           Expanded(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Colors.red)
-                    ),
-                    onPressed: () {
-                      print("False button pressed");
-                    },
-                    child: Text(
-                      "False",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
-                    )
-                ),
-              )
-          )
-
-        ]
-    );
+            padding: EdgeInsets.all(15.0),
+            child: TextButton(
+                style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.red)),
+                onPressed: () {
+                  setState(() {
+                    print("False button pressed");
+                    scorekeeper.add(Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ));
+                  });
+                },
+                child: Text(
+                  "False",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                )),
+          )),
+          Row(children: scorekeeper)
+        ]);
   }
 }
