@@ -9,11 +9,9 @@ void main() => runApp(const Xylophone());
 class Xylophone extends StatelessWidget {
   const Xylophone({super.key});
 
-  void playSound(int soundnumber){
-    AssetsAudioPlayer.newPlayer().open(
-        Audio("assets/note$soundnumber.wav"),
-        autoStart: true,
-        showNotification: true);
+  void playSound(int soundnumber) {
+    AssetsAudioPlayer.newPlayer().open(Audio("assets/note$soundnumber.wav"),
+        autoStart: true, showNotification: true);
   }
 
   @override
@@ -70,7 +68,6 @@ class Xylophone extends StatelessWidget {
                         playSound(5);
                       },
                       child: const Text(""))),
-
               Expanded(
                   child: TextButton(
                       style: const ButtonStyle(
@@ -80,8 +77,6 @@ class Xylophone extends StatelessWidget {
                         playSound(6);
                       },
                       child: const Text(""))),
-
-
               Expanded(
                   child: TextButton(
                       style: const ButtonStyle(
@@ -91,7 +86,6 @@ class Xylophone extends StatelessWidget {
                         playSound(7);
                       },
                       child: const Text(""))),
-
             ],
           ),
         ),
