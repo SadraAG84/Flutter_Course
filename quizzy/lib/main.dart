@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'questions.dart';
+import 'quizBrain.dart';
+
+QuizBrain quizBrain = QuizBrain();
+
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -29,12 +33,6 @@ class _QuizPageState extends State<QuizPage> {
   // List<String> questions = ["is 2 + 1 = 3?", "is human blood green?", "do we have a human with 6 hand?" ];
   // List<bool> correct_answer = [true, false, false];
 
-  List<Questions> question_bank = [
-    Questions(q : "is 2 + 1 = 3?", a: true),
-    Questions(q : "is human blood green?", a: false),
-    Questions(q : "do we have a human with 6 hand?", a: false)
-  ];
-
   int question_number = 0;
 
   @override
@@ -49,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  question_bank[question_number].question_text,
+                  quizBrain.question_bank[question_number].question_text,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -67,7 +65,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
 
-                  bool user_answer = question_bank[question_number].qestion_answer;
+                  bool user_answer = quizBrain.question_bank[question_number].qestion_answer;
                   if(user_answer == true){
                     print("user got right");
                   }else{
@@ -94,7 +92,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.red)),
                 onPressed: () {
 
-                  bool user_answer = question_bank[question_number].qestion_answer;
+                  bool user_answer = quizBrain.question_bank[question_number].qestion_answer;
                   if(user_answer == false){
                     print("user got right");
                   }else{
