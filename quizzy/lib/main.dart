@@ -32,7 +32,7 @@ class _QuizPageState extends State<QuizPage> {
   // List<String> questions = ["is 2 + 1 = 3?", "is human blood green?", "do we have a human with 6 hand?" ];
   // List<bool> correct_answer = [true, false, false];
 
-  int question_number = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  quizBrain.GetText(question_number),
+                  quizBrain.GetText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -64,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.GetAnswer(question_number);
+                  bool user_answer = quizBrain.GetAnswer();
                   if(user_answer == true){
                     print("user got right");
                   }else{
@@ -72,7 +72,7 @@ class _QuizPageState extends State<QuizPage> {
                   }
 
                   setState(() {
-                    question_number++;
+                    quizBrain.nextquestion();
                   });
                 },
                 child: Text(
@@ -91,7 +91,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.red)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.GetAnswer(question_number);
+                  bool user_answer = quizBrain.GetAnswer();
                   if(user_answer == false){
                     print("user got right");
                   }else{
@@ -99,7 +99,7 @@ class _QuizPageState extends State<QuizPage> {
                   }
 
                   setState(() {
-                    question_number++;
+                    quizBrain.nextquestion();
 
                   });
                 },
