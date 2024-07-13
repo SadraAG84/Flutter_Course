@@ -2,14 +2,15 @@ import 'package:quizzy/main.dart';
 
 import 'questions.dart';
 
-class QuizBrain{
-
+class QuizBrain {
   int _question_number = 0;
 
   final List<Questions> _question_bank = [
     Questions(q: "Some cats are actually allergic to humans", a: true),
     Questions(q: "You can lead a cow down stairs but not up stairs.", a: false),
-    Questions(q: "Approximately one quarter of human bones are in the feet.", a: true),
+    Questions(
+        q: "Approximately one quarter of human bones are in the feet.",
+        a: true),
     Questions(q: "A slug\'s blood is green.", a: true),
     Questions(q: "Buzz Aldrin\'s mother\'s maiden name was \"Moon\".", a: true),
     Questions(q: "It is illegal to pee in the Ocean in Portugal.", a: true),
@@ -34,33 +35,29 @@ class QuizBrain{
         a: true),
   ];
 
-  void nextquestion(){
-    if(_question_number < _question_bank.length - 1){
+  void nextquestion() {
+    if (_question_number < _question_bank.length - 1) {
       _question_number++;
     }
-
   }
 
-  String GetText(){
+  String GetText() {
     return _question_bank[_question_number].question_text;
   }
 
-  bool GetAnswer (){
+  bool GetAnswer() {
     return _question_bank[_question_number].qestion_answer;
   }
 
-  bool isFinished(){
-    if(_question_number >= _question_bank.length - 1){
+  bool isFinished() {
+    if (_question_number >= _question_bank.length - 1) {
       return true;
-    }else{
+    } else {
       return false;
     }
-
   }
 
-  void reset(){
+  void reset() {
     _question_number = -1;
   }
-
 }
-
