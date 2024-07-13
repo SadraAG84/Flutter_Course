@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quizBrain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -28,6 +29,35 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+
+  void checkAnswer(bool userPickedAnswer){
+
+    bool correctAnswer = quizBrain.GetAnswer();
+
+
+  if(quizBrain.isFinished() == true){
+    Alert(
+        context: context,
+        title: "Finished!!",
+        desc: "You\'ve reached the end of the quiz."
+    ).show();
+    quizBrain.reset();
+    scorekeeper = [];
+  }else{
+    if(userPickedAnswer == correctAnswer){
+      scorekeeper.add(Icon(Icons.check, color: Colors.green,));
+
+    }else{
+      scorekeeper.add(Icon(Icons.close, color: Colors.red));
+    }
+  }
+
+
+
+
+  }
+
+
   List<Icon> scorekeeper = [];
   // List<String> questions = ["is 2 + 1 = 3?", "is human blood green?", "do we have a human with 6 hand?" ];
   // List<bool> correct_answer = [true, false, false];
@@ -64,12 +94,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.GetAnswer();
-                  if(user_answer == true){
-                    print("user got right");
-                  }else{
-                    print("user got it wrong");
-                  }
+                  checkAnswer(true);
 
                   setState(() {
                     quizBrain.nextquestion();
@@ -91,12 +116,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.red)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.GetAnswer();
-                  if(user_answer == false){
-                    print("user got right");
-                  }else{
-                    print("user got it wrong");
-                  }
+                  checkAnswer(false);
 
                   setState(() {
                     quizBrain.nextquestion();
