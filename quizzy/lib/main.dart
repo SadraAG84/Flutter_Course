@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'questions.dart';
 import 'quizBrain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -47,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(10.0),
               child: Center(
                 child: Text(
-                  quizBrain.question_bank[question_number].question_text,
+                  quizBrain.GetText(question_number),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25.0,
@@ -65,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.green)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.question_bank[question_number].qestion_answer;
+                  bool user_answer = quizBrain.GetAnswer(question_number);
                   if(user_answer == true){
                     print("user got right");
                   }else{
@@ -92,7 +91,7 @@ class _QuizPageState extends State<QuizPage> {
                     backgroundColor: WidgetStatePropertyAll(Colors.red)),
                 onPressed: () {
 
-                  bool user_answer = quizBrain.question_bank[question_number].qestion_answer;
+                  bool user_answer = quizBrain.GetAnswer(question_number);
                   if(user_answer == false){
                     print("user got right");
                   }else{
