@@ -50,7 +50,11 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     //Choice 1 made by user.
-                    storyBrain.nextStory(1);
+                    setState(() {
+                      storyBrain.nextStory(1);
+                    });
+
+                    print("1 chosed");
                   },
                   style: ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(Colors.red)),
@@ -72,7 +76,11 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     //Choice 2 made by user.
-                    storyBrain.nextStory(2);
+                    setState(() {
+                      storyBrain.nextStory(2);
+                    });
+
+                    print("2 chosed");
                   },
                   style: ButtonStyle(
                       backgroundColor: WidgetStatePropertyAll(Colors.blue)),
@@ -92,4 +100,4 @@ class _StoryPageState extends State<StoryPage> {
   }
 }
 
-//TODO: Step 24 - Run the app and try to figure out what code you need to add to this file to make the story change when you press on the choice buttons.
+
