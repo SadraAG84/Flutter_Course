@@ -79,7 +79,7 @@ class _StoryPageState extends State<StoryPage> {
                       setState(() {
                         storyBrain.nextStory(2);
                       });
-                  
+
                       print("2 chosed");
                     },
                     style: ButtonStyle(
@@ -100,5 +100,3 @@ class _StoryPageState extends State<StoryPage> {
     );
   }
 }
-
-
