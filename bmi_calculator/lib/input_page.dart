@@ -8,13 +8,62 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('BMI CALCULATOR')),
-      ),
-      body: Center(
-        child: Text('Body Text'),
-      ),
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text('BMI CALCULATOR')),
+          ),
+          body: Column(
+            children: <Widget>[
+              Expanded(
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1E33),
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                            margin: EdgeInsets.all(15.0),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF1D1E33),
+                              borderRadius: BorderRadius.circular(15.0),
+                            )))
+                  ],
+                ),
+              ),
+              Expanded(
+                  child: Container(
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF1D1E33),
+                        borderRadius: BorderRadius.circular(15.0),
+                      ))),
+              Expanded(
+                  child: Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Container(
+                          margin: EdgeInsets.all(15.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF1D1E33),
+                            borderRadius: BorderRadius.circular(15.0),
+                          ))),
+                  Expanded(
+                      child: Container(
+                          margin: EdgeInsets.all(15.0),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF1D1E33),
+                            borderRadius: BorderRadius.circular(15.0),
+                          ))),
+                ],
+              ))
+            ],
+          )),
     );
   }
 }
