@@ -11,59 +11,45 @@ class _InputPageState extends State<InputPage> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            title: Center(child: Text('BMI CALCULATOR')),
+            title: const Center(child: Text('BMI CALCULATOR')),
           ),
-          body: Column(
+          body: const Column(
             children: <Widget>[
               Expanded(
                 child: Row(
                   children: <Widget>[
-                    Expanded(
-                        child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                    )),
-                    Expanded(
-                        child: Container(
-                            margin: EdgeInsets.all(15.0),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF1D1E33),
-                              borderRadius: BorderRadius.circular(15.0),
-                            )))
+                    Expanded(child: Cards()),
+                    Expanded(child: Cards())
                   ],
                 ),
               ),
-              Expanded(
-                  child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1D1E33),
-                        borderRadius: BorderRadius.circular(15.0),
-                      ))),
+              Expanded(child: Cards()),
               Expanded(
                   child: Row(
                 children: <Widget>[
-                  Expanded(
-                      child: Container(
-                          margin: EdgeInsets.all(15.0),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF1D1E33),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ))),
-                  Expanded(
-                      child: Container(
-                          margin: EdgeInsets.all(15.0),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF1D1E33),
-                            borderRadius: BorderRadius.circular(15.0),
-                          ))),
+                  Expanded(child: Cards()),
+                  Expanded(child: Cards()),
                 ],
               ))
             ],
           )),
+    );
+  }
+}
+
+class Cards extends StatelessWidget {
+  const Cards({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1D1E33),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
     );
   }
 }
