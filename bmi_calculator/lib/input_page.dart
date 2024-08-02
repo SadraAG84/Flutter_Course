@@ -13,22 +13,22 @@ class _InputPageState extends State<InputPage> {
           appBar: AppBar(
             title: const Center(child: Text('BMI CALCULATOR')),
           ),
-          body: const Column(
+          body: Column(
             children: <Widget>[
               Expanded(
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Cards()),
-                    Expanded(child: Cards())
+                    Expanded(child: Cards(color_click: Color(0xFF1D1E33))),
+                    Expanded(child: Cards(color_click: Color(0xFF1D1E33),))
                   ],
                 ),
               ),
-              Expanded(child: Cards()),
+              Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
               Expanded(
                   child: Row(
                 children: <Widget>[
-                  Expanded(child: Cards()),
-                  Expanded(child: Cards()),
+                  Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
+                  Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
                 ],
               ))
             ],
@@ -38,16 +38,19 @@ class _InputPageState extends State<InputPage> {
 }
 
 class Cards extends StatelessWidget {
-  const Cards({
-    super.key,
-  });
+
+  Cards({required this.color_click});
+
+  final Color color_click;
+
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: const Color(0xFF1D1E33),
+        color: color_click,
         borderRadius: BorderRadius.circular(15.0),
       ),
     );
