@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+const bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF1D1E33);
+const botomContainerColor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   @override
@@ -18,19 +23,38 @@ class _InputPageState extends State<InputPage> {
               Expanded(
                 child: Row(
                   children: <Widget>[
-                    Expanded(child: Cards(color_click: Color(0xFF1D1E33))),
-                    Expanded(child: Cards(color_click: Color(0xFF1D1E33),))
+                    Expanded(
+                        child: Cards(
+                      the_color: activeCardColor,
+                      childCard: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: "MALE",
+                      ),
+                    )),
+                    Expanded(
+                        child: Cards(
+                            the_color: activeCardColor,
+                            childCard: IconContent(
+                              icon: FontAwesomeIcons.venus,
+                              label: "FEMALE",
+                            )))
                   ],
                 ),
               ),
-              Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
+              Expanded(child: Cards(the_color: activeCardColor)),
               Expanded(
                   child: Row(
                 children: <Widget>[
-                  Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
-                  Expanded(child: Cards(color_click: Color(0xFF1D1E33),)),
+                  Expanded(child: Cards(the_color: activeCardColor)),
+                  Expanded(child: Cards(the_color: activeCardColor)),
                 ],
-              ))
+              )),
+              Container(
+                color: botomContainerColor,
+                margin: EdgeInsets.only(top: 20.0),
+                width: double.infinity,
+                height: bottomContainerHeight,
+              )
             ],
           )),
     );
@@ -38,21 +62,47 @@ class _InputPageState extends State<InputPage> {
 }
 
 class Cards extends StatelessWidget {
+  Cards({required this.the_color, this.childCard});
 
-  Cards({required this.color_click});
-
-  final Color color_click;
-
+  final Color the_color;
+  final childCard;
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
+      child: childCard,
       margin: const EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: color_click,
+        color: the_color,
         borderRadius: BorderRadius.circular(15.0),
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+  IconContent({required this.icon, this.label});
+
+  final IconData icon;
+  final label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon,
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          label,
+          style: TextStyle(fontSize: 18.0, color: Color(0xFF8D8E98)),
+        )
+      ],
     );
   }
 }
