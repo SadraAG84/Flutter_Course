@@ -8,6 +8,11 @@ const activeCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 const bottomContainerColor = Color(0xFFEB1555);
 
+enum Gender{
+  male,
+  female,
+}
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -18,24 +23,20 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = inactiveCardColor;
 
   //1 = male & 2 = female
-  void updateCardColor(int gender) {
-    if (gender == 1) {
+  void updateCardColor(Gender selectGender) {
+    if (selectGender == Gender.male) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = activeCardColor;
+        femaleCardColor = inactiveCardColor;
       } else {
         maleCardColor = inactiveCardColor;
       }
-      // if (gender == ) {
-      //   if (femaleCardColor == inactiveCardColor) {
-      //     femaleCardColor = activeCardColor;
-      //   } else {
-      //     femaleCardColor = inactiveCardColor;
-      //   }
-      // }
-    }else{
+    }
+    if(selectGender == Gender.female){
       if(femaleCardColor == inactiveCardColor){
         femaleCardColor = activeCardColor;
-      }else{
+        maleCardColor = inactiveCardColor;
+      } else{
         femaleCardColor = inactiveCardColor;
       }
     }
@@ -57,7 +58,7 @@ class _InputPageState extends State<InputPage> {
                         child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateCardColor(1);
+                          updateCardColor(Gender.male);
                         });
                       },
                       child: Cards(
@@ -72,7 +73,7 @@ class _InputPageState extends State<InputPage> {
                         child: GestureDetector(
                       onTap: () {
                         setState(() {
-                          updateCardColor(2);
+                          updateCardColor(Gender.female);
                         });
                       },
                       child: Cards(
