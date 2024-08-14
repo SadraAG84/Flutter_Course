@@ -4,6 +4,7 @@ import 'icon_content.dart';
 import 'cards.dart';
 import 'constants.dart';
 import 'package:item_count_number_button/item_count_number_button.dart';
+import 'result_page.dart';
 
 enum Gender {
   male,
@@ -219,11 +220,20 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ],
               )),
-              Container(
-                color: kBottomContainerColor,
-                margin: EdgeInsets.only(top: 20.0),
-                width: double.infinity,
-                height: kBottomContainerHeight,
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage()));
+                },
+                child: Container(
+                  child: Center(
+                    child: Text("CALCULATE",
+                    style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.w700),),
+                  ),
+                  color: kBottomContainerColor,
+                  margin: EdgeInsets.only(top: 20.0),
+                  width: double.infinity,
+                  height: kBottomContainerHeight,
+                ),
               )
             ],
           )),
