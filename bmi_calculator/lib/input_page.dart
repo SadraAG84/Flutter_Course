@@ -14,6 +14,8 @@ enum Gender {
 }
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
   _InputPageState createState() => _InputPageState();
 }
@@ -77,7 +79,7 @@ class _InputPageState extends State<InputPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Center(
+                    const Center(
                         child: Text(
                       "HEIGHT",
                       style: kLabelTextStyle,
@@ -91,7 +93,7 @@ class _InputPageState extends State<InputPage> {
                           height.toString(),
                           style: kNumberTextStyle,
                         ),
-                        Text(
+                        const Text(
                           "cm",
                           style: kLabelTextStyle,
                         )
@@ -99,14 +101,14 @@ class _InputPageState extends State<InputPage> {
                     ),
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
-                          inactiveTrackColor: Color(0xFF8D8E98),
+                          inactiveTrackColor: const Color(0xFF8D8E98),
                           activeTrackColor: Colors.white,
-                          thumbColor: Color(0xFFEB1555),
-                          overlayColor: Color(0x15EB1555),
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 15.0),
-                          overlayShape:
-                              RoundSliderOverlayShape(overlayRadius: 29.0)),
+                          thumbColor: const Color(0xFFEB1555),
+                          overlayColor: const Color(0x15EB1555),
+                          thumbShape: const RoundSliderThumbShape(
+                              enabledThumbRadius: 15.0),
+                          overlayShape: const RoundSliderOverlayShape(
+                              overlayRadius: 29.0)),
                       child: Slider(
                           value: height.toDouble(),
                           min: 120.0,
@@ -129,7 +131,7 @@ class _InputPageState extends State<InputPage> {
                     childCard: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Center(
+                        const Center(
                           child: Text(
                             "WEIGHT",
                             style: kLabelTextStyle,
@@ -141,7 +143,7 @@ class _InputPageState extends State<InputPage> {
                           textBaseline: TextBaseline.alphabetic,
                           children: <Widget>[
                             Text(weight.toString(), style: kNumberTextStyle),
-                            Text("KG", style: kLabelTextStyle)
+                            const Text("KG", style: kLabelTextStyle)
                           ],
                         ),
                         Row(
@@ -155,7 +157,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
@@ -177,7 +179,7 @@ class _InputPageState extends State<InputPage> {
                     childCard: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Center(
+                        const Center(
                           child: Text(
                             "AGE",
                             style: kLabelTextStyle,
@@ -189,7 +191,7 @@ class _InputPageState extends State<InputPage> {
                           textBaseline: TextBaseline.alphabetic,
                           children: <Widget>[
                             Text(age.toString(), style: kNumberTextStyle),
-                            Text("YEAR", style: kLabelTextStyle)
+                            const Text("YEAR", style: kLabelTextStyle)
                           ],
                         ),
                         Row(
@@ -203,7 +205,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(

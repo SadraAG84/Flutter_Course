@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class BottomButton extends StatelessWidget {
-  const BottomButton({required this.onTab, required this.ButtonTitle});
+  const BottomButton({super.key, required this.onTab, required this.ButtonTitle});
 
   final onTab;
   final String ButtonTitle;
@@ -22,7 +22,7 @@ class BottomButton extends StatelessWidget {
           ),
         ),
         color: kBottomContainerColor,
-        margin: EdgeInsets.only(top: 20.0),
+        margin: const EdgeInsets.only(top: 20.0),
         width: double.infinity,
         height: kBottomContainerHeight,
       ),

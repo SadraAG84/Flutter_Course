@@ -5,8 +5,8 @@ import 'bottom_button.dart';
 import 'calculator_brain.dart';
 
 class ResultPage extends StatelessWidget {
-  ResultPage(
-      {required this.bmiResult,
+  const ResultPage(
+      {super.key, required this.bmiResult,
       required this.resultText,
       required this.interpretation});
 
@@ -18,7 +18,7 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("BMI CALCULATOR"),
+          title: const Text("BMI CALCULATOR"),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -29,7 +29,7 @@ class ResultPage extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Container(
                 alignment: Alignment.bottomLeft,
-                child: Text("Your Result", style: kTitleTextStyle),
+                child: const Text("Your Result", style: kTitleTextStyle),
               ),
             )),
             Expanded(
@@ -40,7 +40,7 @@ class ResultPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
+                      const Text(
                         "Yor data",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -61,7 +61,7 @@ class ResultPage extends StatelessWidget {
                       Text(
                         interpretation,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 30.0),
+                        style: const TextStyle(fontSize: 30.0),
                       )
                     ],
                   ),
