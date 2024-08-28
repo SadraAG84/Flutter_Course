@@ -5,7 +5,10 @@ import 'bottom_button.dart';
 import 'calculator_brain.dart';
 
 class ResultPage extends StatelessWidget {
-  ResultPage({ required this.bmiResult, required this.resultText, required this.interpretation});
+  ResultPage(
+      {required this.bmiResult,
+      required this.resultText,
+      required this.interpretation});
 
   final String bmiResult;
   final String resultText;

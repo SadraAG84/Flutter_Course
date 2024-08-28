@@ -13,8 +13,13 @@ class BottomButton extends StatelessWidget {
       onTap: onTab,
       child: Container(
         child: Center(
-          child: Text(ButtonTitle,
-            style: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.w700),),
+          child: Text(
+            ButtonTitle,
+            style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+                fontWeight: FontWeight.w700),
+          ),
         ),
         color: kBottomContainerColor,
         margin: EdgeInsets.only(top: 20.0),
