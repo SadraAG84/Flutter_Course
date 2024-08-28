@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'cards.dart';
 import 'constants.dart';
-import 'buttom_button.dart';
+import 'bottom_button.dart';
+import 'calculator_brain.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({super.key});
+  ResultPage({ required this.bmiResult, required this.resultText, required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +45,18 @@ class ResultPage extends StatelessWidget {
                       ),
                       Center(
                         child: Text(
-                          "Normal",
+                          resultText.toUpperCase(),
                           style: kKeyResultTextStyle,
                         ),
                       ),
                       Center(
                         child: Text(
-                          "18.3",
+                          bmiResult,
                           style: kBMITextStyle,
                         ),
                       ),
                       Text(
-                        "Your BMI result is low, you should eat more.",
+                        interpretation,
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 30.0),
                       )
