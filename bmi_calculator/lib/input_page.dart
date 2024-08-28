@@ -127,7 +127,7 @@ class _InputPageState extends State<InputPage> {
                       child: Cards(
                     the_color: kActiveCardColor,
                     childCard: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Center(
                           child: Text(
@@ -149,7 +149,7 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   weight--;
                                 });
@@ -160,7 +160,7 @@ class _InputPageState extends State<InputPage> {
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   weight++;
                                 });
@@ -173,67 +173,68 @@ class _InputPageState extends State<InputPage> {
                   )),
                   Expanded(
                       child: Cards(
-                          the_color: kActiveCardColor,
-                        childCard: Column(
+                    the_color: kActiveCardColor,
+                    childCard: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                          child: Text(
+                            "AGE",
+                            style: kLabelTextStyle,
+                          ),
+                        ),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
                           children: <Widget>[
-                            Center(
-                              child: Text(
-                                "AGE",
-                                style: kLabelTextStyle,
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.baseline,
-                              textBaseline: TextBaseline.alphabetic,
-                              children: <Widget>[
-                                Text(age.toString(), style: kNumberTextStyle),
-                                Text("YEAR", style: kLabelTextStyle)
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                RoundIconButton(
-                                  icon: FontAwesomeIcons.minus,
-                                  onPressed: (){
-                                    setState(() {
-                                      age--;
-                                    });
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                RoundIconButton(
-                                  icon: FontAwesomeIcons.plus,
-                                  onPressed: (){
-                                    setState(() {
-                                      age++;
-                                    });
-                                  },
-                                )
-                              ],
-                            )
+                            Text(age.toString(), style: kNumberTextStyle),
+                            Text("YEAR", style: kLabelTextStyle)
                           ],
                         ),
-                      )
-                  ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )),
                 ],
               )),
               BottomButton(
                 ButtonTitle: "CALCULATE",
-                onTab: (){
+                onTab: () {
+                  CalculatorBrain calculate =
+                      CalculatorBrain(height: height, weight: weight);
 
-                  CalculatorBrain calculate = CalculatorBrain(height: height, weight: weight);
-
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(
-                    bmiResult: calculate.calculateBMI(),
-                    resultText: calculate.getResult(),
-                    interpretation: calculate.getInterpretation(),
-
-                  )));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ResultPage(
+                                bmiResult: calculate.calculateBMI(),
+                                resultText: calculate.getResult(),
+                                interpretation: calculate.getInterpretation(),
+                              )));
                 },
               )
             ],
@@ -241,8 +242,3 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
-
-
-
-
-
